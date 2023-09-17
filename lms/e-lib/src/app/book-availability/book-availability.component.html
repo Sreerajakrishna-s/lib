@@ -1,0 +1,25 @@
+<ul class="navbar">
+  <li><a class="active" [routerLink]="['/home']">Home</a></li>
+  <li><a [routerLink]="['/book-list']">BookList</a></li>
+  <li><a [routerLink]="['/search']">Search</a></li>
+  <li><a [routerLink]="['/book-availability']">Availability</a></li>
+  <li><a [routerLink]="['/cart']">Cart</a></li>
+  <!-- <li><a class="login" [routerLink]="['/login']">Login</a></li> -->
+  <!-- <li><a [routerLink]="['/register']">Signup</a></li> -->
+  <li><a [routerLink]="['/audio']">Audio Books</a></li>
+  <li><a [routerLink]="['/news']">E-news</a></li>
+</ul>
+<br><br>
+<h1>AVAILABLE BOOKS</h1>
+<div class="book-list">
+  <div *ngFor="let book of books" class="book">
+    <h3>{{ book.title }}</h3>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.genre }}</p>
+    <p>Year: {{ book.year }}</p>
+    <p class="availability" [ngClass]="{ 'available': book.availableCopies > 0, 'unavailable': book.availableCopies === 0 }">
+      Availability: {{ book.availableCopies > 0 ? 'Available' : 'Unavailable' }}
+    </p>
+    <p>Available Copies: {{ book.availableCopies }}</p>
+  </div>
+</div>

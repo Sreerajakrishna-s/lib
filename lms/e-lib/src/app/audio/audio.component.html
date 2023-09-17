@@ -1,0 +1,37 @@
+<ul class="navbar">
+    <li><a class="active" [routerLink]="['/home']">Home</a></li>
+    <li><a class="active" [routerLink]="['/book-list']">BookList</a></li>
+    <li><a [routerLink]="['/search']">Search</a></li>
+    <li><a [routerLink]="['/book-availability']">Availability</a></li>
+    <li><a [routerLink]="['/cart']">Cart</a></li>
+    <!-- <li><a class="login" [routerLink]="['/login']">Login</a></li> -->
+    <!-- <li><a [routerLink]="['/register']">Signup</a></li> -->
+    <li><a [routerLink]="['/audio']">Audio</a></li>
+    <li><a [routerLink]="['/news']">E-news</a></li>
+  </ul>
+  
+  
+<div class="card-container">
+    <div class="wrapper">
+     <h1>Empower Learning</h1>
+     <div class="cards">
+       <div *ngFor="let podcast of podcastList" class="card">
+         <div class="card-body">
+           <img class="podcast-image" [src]="podcast.imageUrl" alt="Podcast Image">
+           <div class="podcast-content">
+             <h3 class="podcast-title">{{ podcast.title }}</h3>
+             <p class="author-name">{{ podcast.author }}</p>
+             <div class="star-ratings">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half"></i>
+             </div>
+             <audio #audioPlayer [src]="podcast.audioSrc" controls></audio>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   </div>

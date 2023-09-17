@@ -1,0 +1,22 @@
+<ul class="navbar">
+    <li><a class="active" [routerLink]="['/home']">Home</a></li>
+    <li><a class="active" [routerLink]="['/book-list']">BookList</a></li>
+    <li><a [routerLink]="['/search']">Search</a></li>
+    <li><a [routerLink]="['/book-availability']">Availability</a></li>
+    <li><a [routerLink]="['/cart']">Cart</a></li>
+    <li><a [routerLink]="['/audio']">Audio Books</a></li>
+    <li><a [routerLink]="['/news']">E-news</a></li>
+  </ul>
+<div class="row">
+    <div class="headline" *ngFor="let article of articles">
+      <h1 class="heading">{{article.title}}</h1>
+        <p class="auth"><span class="sub-head"> Author: </span>{{article.author}}</p>
+        <div class="article-content">
+        <p>
+          {{article.description}}
+        </p>
+        </div>
+         <img class="article__featured-image"  src="{{article.urlToImage}}" srcset="{{article.urlToImage}}">
+      <div class="paginatn">
+       <p class="center"> <a class="btn" target="blank" href="{{article.url}}">Read full article</a></p>
+      </div>

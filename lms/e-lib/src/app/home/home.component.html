@@ -1,0 +1,20 @@
+<ul class="navbar">
+  <li><a class="active" [routerLink]="['/home']">Home</a></li>
+  <li><a class="active" [routerLink]="['/book-list']">BookList</a></li>
+  <li><a [routerLink]="['/search']">Search</a></li>
+  <li><a [routerLink]="['/book-availability']">Availability</a></li>
+  <li><a [routerLink]="['/cart']">Cart</a></li>
+  <li><a class="login" [routerLink]="['/login']">Login</a></li>
+  <li><a [routerLink]="['/register']">Signup</a></li>
+  <li><a [routerLink]="['/audio']">Audio Books</a></li>
+  <li><a [routerLink]="['/news']">E-news</a></li>
+</ul>
+
+<div class="loading-container" *ngIf="loading">
+  <div class="loading-spinner"></div>
+</div>
+
+<h1 class="head">Welcome to e-lib</h1>
+<p class="para">Explore the adventure of reading books</p>
+<img class="image" src="https://media.istockphoto.com/id/1446081831/vector/stack-of-books-and-open-book-book-lover-reading-book-store-library-education-concept.jpg?s=612x612&w=0&k=20&c=6LI93DL9Wy8wZnS-5ochv2Zv8h4OitJk85Gxwhu_I9Y=">
+<br><br>

@@ -1,0 +1,32 @@
+   <ul class="navbar">
+    <li><a class="active" [routerLink]="['/home']">Home</a></li>
+    <li><a [routerLink]="['/book-list']">BookList</a></li>
+    <li><a [routerLink]="['/search']">Search</a></li>
+    <li><a [routerLink]="['/book-availability']">Availability</a></li>
+    <li><a [routerLink]="['/cart']">Cart</a></li>
+    <!-- <li><a class="login" [routerLink]="['/login']">Login</a></li> -->
+    <!-- <li><a [routerLink]="['/register']">Signup</a></li> -->
+    <li><a [routerLink]="['/audio']">Audio Books</a></li>
+    <li><a [routerLink]="['/news']">E-news</a></li>
+  </ul>
+  
+  <div class ="h1">
+    <h1>Check for availability</h1>
+  </div>
+  <div class="book-list">
+    <div *ngFor="let book of books" class="book-item">
+      <img class="image" src="../assets/img/books/book7.jpg">
+      <h2>{{ book.title }}</h2>
+      <p>Author: {{book.author}}</p>
+      <p>Genre: {{book.genre}}</p>
+      <p>Year of Publishing: {{book.year}}</p>
+      <p>Availability: {{book.availability}}</p>
+      <p>Price: {{book.price}}</p>
+      <br>
+      <button class="button" (click)="addToCart(book)">Add to Cart</button>
+      <p>Quantity in Cart: {{ getQuantityInCart(book) }}</p>
+    </div>
+  
+    
+  </div>
+  
